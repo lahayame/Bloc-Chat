@@ -20,6 +20,22 @@ componentDidMount() {
   });
 }
 
+createRoom(newRoomName) {
+  this.roomsRef.push({
+    name: newRoomName,
+    createdAt: Date.now(),
+  });
+  this.setState({ newRoomName: ''});
+}
+
+handleChange(e) {
+  this.setState({newRoomName: e.target.value});
+}
+
+handleSubmit(e) {
+  e.preventDefault();
+  this.createRoom(this.state.newRoomName);
+}
 
 
 render() {
@@ -31,6 +47,10 @@ render() {
           {room.name}
         </li>
       )}
+      <form id="create-room" onSubmit={ (e) => { this.handleSubmit(e) } }>
+        <input type="text" value={ this.state.newRoomName } onChange={ this.handleChange.bind(this) } name="newRoomName" placeholder="New Room" />
+        <input type="submit" value="+" />
+      </form>
     </section>
   );
 }
