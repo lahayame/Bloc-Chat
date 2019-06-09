@@ -10,9 +10,9 @@ var firebaseConfig = {
     projectId: "amelia-s-chat-room",
     storageBucket: "amelia-s-chat-room.appspot.com",
     messagingSenderId: "934227550242",
-    appId: "1:934227550242:web:cfb87d135b564aab"
+    appId: "1:934227550242:web:c771c216c88e93f1"
   };
-
+  // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
 
