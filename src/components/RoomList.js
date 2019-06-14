@@ -43,7 +43,10 @@ render() {
     <section className="room-list">
       <h3>Rooms</h3>
       {this.state.rooms.map( room =>
-        <li key={room.key} >
+        <li
+          key={room.key}
+          onClick={() => this.props.setActiveRoom(room)}
+        >
           {room.name}
         </li>
       )}
